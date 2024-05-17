@@ -1,0 +1,19 @@
+{
+  "name": "sefat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/18029450uhi/Assignment1_18029450.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/18029450uhi/Assignment1_18029450/issues"
+  },
+  "homepage": "https://github.com/18029450uhi/Assignment1_18029450#readme",
+  "description": ""
+}

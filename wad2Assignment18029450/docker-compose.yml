@@ -1,0 +1,87 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    restart: always
+      #stdin_open: true # docker run -i
+      #tty: true        # docker run -t
+      #networks:
+      #mern-pern:
+    #ipv4_address: 192.168.55.15
+
+  mongodb:
+    image: mongo
+    ports:
+      - '27017:27017'
+    restart: always
+      #stdin_open: true # docker run -i
+      #tty: true        # docker run -t
+      #networks:
+      #mern-pern:
+    #ipv4_address: 192.168.55.11
+
+  auth-server:
+    build: auth-server
+    ports:
+      - '8081:8080'
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    restart: always
+      #stdin_open: true # docker run -i
+      #tty: true        # docker run -t
+      #networks:
+      #mern-pern:
+    #ipv4_address: 192.168.55.12
+
+  question-server:
+    build: question-server
+    ports:
+      - '8083:8082'
+    depends_on:
+      - mongodb
+    restart: always
+      #stdin_open: true # docker run -i
+      #tty: true        # docker run -t
+      #networks:
+      #mern-pern:
+    #ipv4_address: 192.168.55.13
+  client:
+    build: ./client
+    ports:
+      - '3000:3000'
+        #stdin_open: true # docker run -i
+        #tty: true        # docker run -t
+        #networks:
+        #mern-pern:
+      #ipv4_address: 192.168.55.17
+
+  nginx:
+    build: ./nginx
+    ports:
+      - '8080:80'
+    depends_on:
+      - auth-server
+      - question-server
+        #stdin_open: true # docker run -i
+        #tty: true        # docker run -t
+        #networks:
+        #mern-pern:
+        #ipv4_address: 192.168.55.20
+
+        #networks:
+        #mern-pern:
+        #driver: bridge
+        #ipam:
+        #driver: default
+        #config:
+        #- subnet: 192.168.55.0/24
+      #gateway: 192.168.55.1
