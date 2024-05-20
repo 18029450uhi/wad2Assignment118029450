@@ -18,9 +18,10 @@ Figure 1: High Level Architectural Diagram
     RUN: docker build -t aqc .  
     RUN: docker run -ti -d --name aqc1  -p 4000:4000 -p 4040:4040  aqc  
      
-    Check in the port 4000 if alevel container is running and can be accessed using the mentioned port from web      browser.  
+    Check in the port 4000 if alevel container is running and can be accessed using the mentioned port from web browser.  
+    - **If the startup.sh file is not found when running the container, please use the alevelcomputing.zip folder**.
 
-  3. **Start the project**:  
+  4. **Start the project**:  
       GO TO: cd /root directory   
       Run the below instruction in the root directory :  
      
