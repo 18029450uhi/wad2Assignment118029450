@@ -10,21 +10,21 @@ Figure 1: High Level Architectural Diagram
 
 1. **Clone the Repository**:  
 
-git clone https://github.com/18029450uhi/wad2assignment18029450.git
+   git clone https://github.com/18029450uhi/wad2assignment18029450.git
 
 2. **Start the alevelcomputing Server**:
    
-GOTO: cd\alevelcomputing  
-RUN: docker build -t aqc .  
-RUN: docker run -ti -d --name aqc1  -p 4000:4000 -p 4040:4040  aqc  
-GOTO: cd /root directory  
-Check in the port 4000 if alevel container is running and can be accessed using the mentioned port from web browser.  
+    GOTO: cd\alevelcomputing  
+    RUN: docker build -t aqc .  
+    RUN: docker run -ti -d --name aqc1  -p 4000:4000 -p 4040:4040  aqc  
+    GOTO: cd /root directory  
+    Check in the port 4000 if alevel container is running and can be accessed using the mentioned port from web      browser.  
 
-3.**Start the project**:    
-Run the below instruction in the root directory  
-RUN: for Linux/MAC-  docker compose up  
-For windows :docker-compose up  
+  3. **Start the project**:    
+      Run the below instruction in the root directory  
+      RUN: for Linux/MAC-  docker compose up  
+      For windows :docker-compose up  
 
-4 . **Open the Application**:
- Visit `http://localhost:3000` in the web browser.  
+   4. **Open the Application**:  
+         Visit `http://localhost:3000` in the web browser.  
 
