@@ -14,18 +14,20 @@ Figure 1: High Level Architectural Diagram
 
 2. **Start the alevelcomputing Server**:
    
-    GOTO: cd\alevelcomputing  
+    GO TO: cd\alevelcomputing  
     RUN: docker build -t aqc .  
     RUN: docker run -ti -d --name aqc1  -p 4000:4000 -p 4040:4040  aqc  
-    GOTO: cd /root directory  
+     
     Check in the port 4000 if alevel container is running and can be accessed using the mentioned port from web      browser.  
 
-  3. **Start the project**:    
-      Run the below instruction in the root directory  
-      RUN: for Linux/MAC-  docker compose up  
-      For windows :docker-compose up  
+  3. **Start the project**:  
+      GO TO: cd /root directory   
+      Run the below instruction in the root directory :  
+     
+     -  For Linux/MAC: docker compose up    
+     -  For windows  : docker-compose up    
 
-   4. **Open the Application**:  
+   5. **Open the Application**:  
          Visit `http://localhost:3000` in the web browser.
 ## Methodology  
 
@@ -79,6 +81,7 @@ For this part of the assignment , the main server has been allocated into two di
  - **API Enhancements** :    
    Modified the API to fetch questions from  MongoDB based on the request, ensuring compatibility with the existing system.
    
+- **Nginx Server Deployed** :  
 Nginx has been used to route requests to the servers based on addresses given. Nginx configuration file sets up a reverse proxy server that listens for incoming HTTP requests on port 80. It forwards requests to different backend servers based on the requested URL path. Requests to "/api/questions" and "/api/stars" are proxied to the "question"  server, while other requests are proxied to the "auth"  server  for authentication. Various HTTP headers are set to ensure proper handling and forwarding of the requests.    
 
 ## Integration with ALevelComputing  
