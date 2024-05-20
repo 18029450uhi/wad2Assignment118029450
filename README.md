@@ -26,5 +26,28 @@ Figure 1: High Level Architectural Diagram
       For windows :docker-compose up  
 
    4. **Open the Application**:  
-         Visit `http://localhost:3000` in the web browser.  
+         Visit `http://localhost:3000` in the web browser.
+## Methodology  
+
+#### Technologies Used:  
+
+The technologies used in this project are listed below :      
+    
+  - **React Font-end**: A JavaScript library for building user interfaces, utilized for the front-end development.
+     
+  - **Express Backend**: A web server for Node.js, employed for developing the backend server.
+      
+  - **Mongos**: For Working with MongoDB with Exoress
+      
+  - **Sequilize** : For Working with Postgresql
+     
+  - **MongoDB & PostgresSQL Database**:  
+    Two types of databases used in the project:  
+      -  MongoDB: A NoSQL document database, utilized for storing and retrieving dynamic data such as questions. 
+      - PostgresSQL: A powerful, open-source Object relational database system, used for storing structured data such as authentication and credentials.  
+        
+   - **Docker & Docker Compose**: Containerization platforms used for packaging, distributing, and running applications within containers, ensuring consistency across development, testing, and production environments.
+     
+   - **Nginx as Reverse Proxy** : A high-performance web server and reverse proxy server used to handle client requests and distribute them to backend servers, such as Express, to improve performance, security, and scalability.
+
 
