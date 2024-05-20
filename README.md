@@ -54,7 +54,7 @@ The technologies used in this project are listed below :
    - **Nginx as Reverse Proxy** : A high-performance web server and reverse proxy server used to handle client requests and distribute them to backend servers, such as Express, to improve performance, security, and scalability.
 
 
-## Implementation Details:  
+## Implementation Details    
    The first requirement of this project is to decompose the IWTSC container into Front end react app, the api and postgres.    
    
 ### IWTSC Container Decomposition:  
@@ -69,6 +69,7 @@ The technologies used in this project are listed below :
     The APIs have been placed into different containers for decomposition purpose.  
    
 ### Integration with MongoDB for Question Delivery:  
+
 For this part of the assignment , the main server has been allocated into two different servers auth server and question server.  
  A different server named question-server has been used for question delivery purposes. This server utilizes MongoDB to send questions. In the server.js file function initial() has  been called to create the questions.  
 
@@ -85,7 +86,7 @@ For this part of the assignment , the main server has been allocated into two di
 - **Nginx Server Deployed** :  
 Nginx has been used to route requests to the servers based on addresses given. Nginx configuration file sets up a reverse proxy server that listens for incoming HTTP requests on port 80. It forwards requests to different backend servers based on the requested URL path. Requests to "/api/questions" and "/api/stars" are proxied to the "question"  server, while other requests are proxied to the "auth"  server  for authentication. Various HTTP headers are set to ensure proper handling and forwarding of the requests.    
 
-## Integration with ALevelComputing  
+### Integration with ALevelComputing :  
 
  - **Unaltered ALevelComputing Site** :  
    -Ensured that the ALevelComputing site remains unchanged to maintain its functionality and it can be accessed from the defined address locahost:4000 .  
@@ -100,7 +101,7 @@ Nginx has been used to route requests to the servers based on addresses given. N
   Implemented mechanisms to display correct answers when accessing through the IWTSC container, without affecting the original functionality of ALevelComputing. Modified the interface to display questions and answers in the same page when coming through iwtsc site. The AQuesitonPage.js has been modified to check if the re
   uest is coming through iwtsc it shows the question and answer at the same page.  
 
-### Clean-up and Optimization :  
+## Clean-up and Optimization 
 
  - **Disaster management** :  
     Stars and questions model has been kept in the auth server only for backup purposes. If the question server is down, it can be used as initial routing point. Nginx server can be configured to set up a load balancer. If the question server is down, it can redirect all the requests to auth server.
