@@ -59,11 +59,11 @@ The technologies used in this project are listed below :
 - **Front-end React App**:  
     Extracted into a separate container named client to ensure modularity and scalability. Utilizes Docker to containerize the React application for efficient deployment.
    
-- **PostgreSQL** :
-- The PostgreSQL has been moved into its own container to maintain data integrity and isolation. PostgreSQL container retains authentication data.
+- **PostgreSQL** :  
+  The PostgreSQL has been moved into its own container to maintain data integrity and isolation. PostgreSQL container retains authentication data.
   
- - **Api(Auth Server)** :
-    The API has been placed into different containers for decomposition purpose.  
+ - **Api(Auth Server)** :  
+    The APIs have been placed into different containers for decomposition purpose.  
    
 ### Integration with MongoDB for Question Delivery:  
 For this part of the assignment , the main server has been allocated into two different servers auth server and question server.  
